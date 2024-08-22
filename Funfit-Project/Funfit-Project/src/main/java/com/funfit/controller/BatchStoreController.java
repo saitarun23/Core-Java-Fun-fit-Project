@@ -48,17 +48,17 @@ public class BatchStoreController extends HttpServlet {
 		String time=request.getParameter("time");
 		
 		// create Product java bean class object. 
-		Batch p=new Batch(bid,typeofbatch,time);
+		Batch b=new Batch(bid,typeofbatch,time);
 		
 		// created service class object 
-		BatchService ps = new BatchService();
+		BatchService bs = new BatchService();
 				
 		// pass the object and get the result 
-		String result = ps.storeBatch(p);
+		String result = bs.storeBatch(b);
 		pw.print(result);
 		
 		// created request dispatcher object and include the page 
-		RequestDispatcher rd = request.getRequestDispatcher("add_product.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("add_batch.jsp");
 		
 		// set the content in html format. 
 		response.setContentType("text/html");
