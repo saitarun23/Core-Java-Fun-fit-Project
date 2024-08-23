@@ -8,7 +8,13 @@
 </head>
 <body>
 <h2>Delete Batch</h2>
-
+<form action="BatchDeleteController" method="post">
+	<label>BID</label>
+	<input type="number" name="bid"><br/>
+	
+	<input type="submit" value="Delete Batch"/>
+	<input type="reset" value="reset"/>
+</form>
 <a href="batch.jsp">Back</a>
 </body>
 </html>

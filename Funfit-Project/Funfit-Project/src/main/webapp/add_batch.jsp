@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Add Batch</title>
+
 </head>
 <body>
 <h2>Add Batch</h2>
@@ -12,11 +13,11 @@
 <form action="BatchStoreController" method="post">
 	<label>BId</label>
 	<input type="number" name="bid"/><br/>
-	<label>Type Of Batch</label>
+	<label>Type of batch</label>
 	<input type="text" name="typeofbatch"/><br/>
 	<label>Time</label>
-	<input type="text" name="price"/><br/>
-	<input type="submit" value="Store Batch"/>
+	<input type="text" name="time"/><br/>
+	<input type="submit" value="Store batch"/>
 	<input type="reset" value="reset"/>
 </form>
 

@@ -14,16 +14,16 @@ import com.funfit.bean.Batch;
 import com.funfit.service.BatchService;
 
 /**
- * Servlet implementation class BatchStoreController
+ * Servlet implementation class BatchUpdateController
  */
-@WebServlet("/BatchStoreController")
-public class BatchStoreController extends HttpServlet {
+@WebServlet("/BatchUpdateController")
+public class BatchUpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BatchStoreController() {
+    public BatchUpdateController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,25 +40,26 @@ public class BatchStoreController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter pw=response.getWriter();
+		PrintWriter pw = response.getWriter();
 		// receive the value from form and convert to respective data types. 
 		
-		int bid=Integer.parseInt(request.getParameter("bid"));//convert string to int 
-		String typeofbatch=request.getParameter("typeofbatch");
-		String time=request.getParameter("time");
+		int bid =Integer.parseInt(request.getParameter("bid"));// convert string to int 
+		String time = request.getParameter("time"); 
 		
 		// create Product java bean class object. 
-		Batch b=new Batch(bid, typeofbatch, time);
+		Batch b  = new Batch();
+		b.setBid(bid);
+		b.setTime(time);
 		
 		// created service class object 
-		BatchService bs = new BatchService();
-				
+		BatchService bs=new BatchService();
+		
 		// pass the object and get the result 
-		String result = bs.storeBatch(b);
+		String result = bs.updateBatch(b);
 		pw.print(result);
 		
 		// created request dispatcher object and include the page 
-		RequestDispatcher rd = request.getRequestDispatcher("add_batch.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("update_batch.jsp");
 		
 		// set the content in html format. 
 		response.setContentType("text/html");
