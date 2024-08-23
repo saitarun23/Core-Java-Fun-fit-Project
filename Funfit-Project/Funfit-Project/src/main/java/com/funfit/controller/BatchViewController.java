@@ -34,13 +34,17 @@ public class BatchViewController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter pw=response.getWriter();
-		BatchService bs=new BatchService();
-		List<Batch> listofbatch=bs.findAllBatch();
-		request.setAttribute("listofbatch", listofbatch);
-		RequestDispatcher rd=request.getRequestDispatcher("view_batch.jsp");
-		rd.forward(request, response);
+		PrintWriter pw = response.getWriter();
+		BatchService ps = new BatchService();
+		List<Batch> listofbatch = ps.findAllBatch();
+		HttpSession hs=request.getSession();
+		//request.setAttribute("listofbatch",listofbatch);		// request scope 
+		hs.setAttribute("listofbatch",listofbatch);				//// session scope 
+		//RequestDispatcher rd = request.getRequestDispatcher("view_batch.jsp");
+		//rd.forward(request, response);
+		response.sendRedirect("view_batch.jsp");
 	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
