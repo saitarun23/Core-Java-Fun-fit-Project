@@ -51,7 +51,7 @@ public class StudentUpdateController extends HttpServlet {
 		
 		// create Product java bean class object. 
 		Student s=new Student();
-		s.setBid(sid);
+		s.setSid(sid);
 		s.setSname(sname);
 		s.setAge(age);
 		s.setPhone(phone);
