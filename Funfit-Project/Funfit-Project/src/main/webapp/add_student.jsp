@@ -28,7 +28,7 @@
 	<label>BId</label>
 	<input type="number" name="bid"/><br/>
 	
-	<input type="submit" value="Store batch"/>
+	<input type="submit" value="Store Student"/>
 	<input type="reset" value="reset"/>
 </form>
 <a href="student.jsp">Back</a>

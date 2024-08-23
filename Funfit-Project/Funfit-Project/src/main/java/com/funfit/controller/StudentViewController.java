@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,20 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.funfit.bean.Batch;
-import com.funfit.service.BatchService;
+import com.funfit.bean.Student;
+import com.funfit.service.StudentService;
 
 /**
- * Servlet implementation class BatchViewController
+ * Servlet implementation class StudentViewController
  */
-@WebServlet("/BatchViewController")
-public class BatchViewController extends HttpServlet {
+@WebServlet("/StudentViewController")
+public class StudentViewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BatchViewController() {
+    public StudentViewController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,16 +34,16 @@ public class BatchViewController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();
-		BatchService bs = new BatchService();
-		List<Batch> listofbatch = bs.findAllBatch();
+		StudentService ss=new StudentService();
+		List<Student> listofstudent = ss.findAllStudent();
 		HttpSession hs=request.getSession();
 		//request.setAttribute("listofbatch",listofbatch);		// request scope 
-		hs.setAttribute("listofbatch",listofbatch);				//// session scope 
+		hs.setAttribute("listofstudent",listofstudent);				//// session scope 
 		//RequestDispatcher rd = request.getRequestDispatcher("view_batch.jsp");
 		//rd.forward(request, response);
-		response.sendRedirect("view_batch.jsp");
+		response.sendRedirect("view_student.jsp");
+
 	}
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

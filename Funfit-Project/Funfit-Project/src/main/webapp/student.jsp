@@ -14,7 +14,7 @@
 		 <a href="add_student.jsp">Add Student</a> |
         <a href="delete_student.jsp">Delete Student</a> |
         <a href="update_student.jsp">Update Student</a> |
-        <a href="view_student.jsp">View Student</a> <br/>
+        <a href="StudentViewController">View Student</a> <br/>
     <br/>
     <br/>
 

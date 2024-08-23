@@ -1,5 +1,7 @@
 package com.funfit.service;
 
+import java.util.List;
+
 import com.funfit.bean.Student;
 import com.funfit.dao.StudentDao;
 
@@ -27,6 +29,17 @@ public class StudentService {
 			return "Student not present";
 		}
 	}
-
+	
+	public String updateStudent(Student student) {
+		if(sd.updateStudent(student)>0) {
+			return "Student Details updated successfully";
+		}else {
+			return "Student not present";
+		}
+	}
+	
+	public List<Student> findAllStudent(){
+		return sd.findAllStudents();
+	}
 }
        
