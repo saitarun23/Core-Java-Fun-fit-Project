@@ -18,6 +18,6 @@
     <br/>
     <br/>
 
-    <a href="index.html">Back</a>
+    <a href="index.jsp">Back</a>
 </body>
 </html>
