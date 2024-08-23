@@ -3,11 +3,17 @@ package com.funfit.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.funfit.bean.Student;
+import com.funfit.service.StudentService;
+
+
 
 /**
  * Servlet implementation class StudentStoreController
@@ -45,6 +51,19 @@ public class StudentStoreController extends HttpServlet {
 		String phone=request.getParameter("phone");
 		String email=request.getParameter("email");
 		int bid=Integer.parseInt(request.getParameter("bid"));
+		
+		Student s=new Student(sid, sname, age, phone, email, bid);
+		
+		StudentService ss=new StudentService();
+		
+		String result=ss.storeStuent(s);
+		pw.print(result);
+		
+		RequestDispatcher rd=request.getRequestDispatcher("add_student.jsp");
+		
+		response.setContentType("text/html");
+		rd.include(request, response);
+		
 	}
 
 }
