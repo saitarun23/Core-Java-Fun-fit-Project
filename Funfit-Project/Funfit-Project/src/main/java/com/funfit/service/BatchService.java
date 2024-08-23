@@ -11,13 +11,13 @@ public class BatchService {
 	
 	public String storeBatch(Batch batch) {
 		if(batch.getBid()<=0) {
-			return "Id >0";
+			return "Invalid batch ID";
 		}
 		else if(bd.storeBatch(batch)>0) {
-			return "Details  saved";
+			return "Batch Details saved";
 		}
 		else {
-		return "Batch Saved Successfully";	
+		return "Batch details didn't store";	
 		}
 	}
 	
