@@ -7,6 +7,7 @@ public class StudentService {
 	
 	StudentDao sd=new StudentDao();
 	public String storeStuent(Student student) {
+		
 		return null;
 	}
 
