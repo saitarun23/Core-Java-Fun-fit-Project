@@ -18,6 +18,15 @@ public class StudentService {
 			return "Student details didn't store";
 		}
 	}
+	
+	public String deletestudent(int sid) {
+		if(sd.deletestudent(sid)>0) {
+			return "Student deleted Successfully";
+		}
+		else {
+			return "Student not present";
+		}
+	}
 
 }
        

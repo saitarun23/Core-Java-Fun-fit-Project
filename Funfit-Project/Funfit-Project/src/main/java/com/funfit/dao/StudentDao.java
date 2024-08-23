@@ -24,5 +24,19 @@ public class StudentDao {
 			return 0;
 		}
 	}
+	
+	public int deletestudent(int sid) {
+		try {
+			Connection con=DbResource.getDbConnection();
+			PreparedStatement pstmt=con.prepareStatement("delete from student where bid=?");
+			pstmt.setInt(1, sid);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.err.println(e);
+			return 0;
+		}
+	}
+	
+	
 
 }
