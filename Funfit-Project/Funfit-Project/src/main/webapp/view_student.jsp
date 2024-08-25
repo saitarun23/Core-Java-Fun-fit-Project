@@ -10,7 +10,6 @@
 <body>
 <h2>View Student</h2>
 
-<h3>All Batch information using JSTL</h3>
 <table border="2" class="table">
 	<tr>
 		<th>SID</th>

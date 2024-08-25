@@ -10,6 +10,7 @@ public class StudentService {
 	StudentDao sd=new StudentDao();
 	
 	public String storeStuent(Student student) {
+		
 		if(student.getSid()<=0) {
 			return "Invalid Student ID";
 		}
@@ -22,6 +23,7 @@ public class StudentService {
 	}
 	
 	public String deletestudent(int sid) {
+		
 		if(sd.deletestudent(sid)>0) {
 			return "Student deleted Successfully";
 		}
@@ -31,6 +33,7 @@ public class StudentService {
 	}
 	
 	public String updateStudent(Student student) {
+		
 		if(sd.updateStudent(student)>0) {
 			return "Student Details updated successfully";
 		}else {

@@ -31,7 +31,7 @@ public class StudentDao {
 	public int deletestudent(int sid) {
 		try {
 			Connection con=DbResource.getDbConnection();
-			PreparedStatement pstmt=con.prepareStatement("delete from student where bid=?");
+			PreparedStatement pstmt=con.prepareStatement("delete from student where sid=?");
 			pstmt.setInt(1, sid);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
