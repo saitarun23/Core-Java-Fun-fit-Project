@@ -11,12 +11,21 @@
 <h2>Add Batch</h2>
 
 <form action="BatchStoreController" method="post">
+
 	<label>BId</label>
 	<input type="number" name="bid"/><br/>
+	
 	<label>Type of batch</label>
-	<input type="text" name="typeofbatch"/><br/>
+	<select id="typeofbatch" name="typeofbatch" >
+			<option value="">Select</option>
+            <option value="morning">Morning</option>
+            <option value="evening">Evening</option>
+	</select><br/>
+	
+	
 	<label>Time</label>
 	<input type="text" name="time"/><br/>
+	
 	<input type="submit" value="Store batch"/>
 	<input type="reset" value="reset"/>
 </form>
